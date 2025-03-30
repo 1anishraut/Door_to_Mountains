@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@font-face {
+  font-family: Gilroy-Black;
+  src: url(/Fonts/Gilroy-Black.ttf);
+}
+@font-face {
+  font-family: Gilroy-Mid;
+  src: url(/Fonts/Gilroy-Medium.ttf);
+}
+.landing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 21, 37, 0.603);
+    z-index: -1;
+    /* border: 2px solid green; */
+}
+body{
+  font-family: Gilroy-Mid;
+  background-color: #c7e8f7;
+  letter-spacing: 1px;
+}
+h1{
+  font-family: Gilroy-Black;
+}
+.landingText{
+    font-size: 15vw;
+    /* font-family: Gilroy-Black; */
+    /* font-weight: 500; */
+    /* max-width: 80%; */
+    line-height: 1;
+    height: 12.6vw;
+    /* color: #F3E4F1; */
+    /* border: 2px solid black; */
+}
+@media only screen and (min-width: 550px) {
+  .countName{
+    display: block;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    color: rgb(82, 69, 69);
+  }
+}

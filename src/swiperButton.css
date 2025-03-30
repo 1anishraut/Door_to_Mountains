@@ -1,0 +1,19 @@
+.swiper-button-prev,
+.swiper-button-next{
+  color: rgb(255, 255, 255);
+  position: relative;
+  /* border: 2px solid red; */
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  font-weight: 700;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after{
+  font-size: 10px;
+}
+.next-button, .prev-button{
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
