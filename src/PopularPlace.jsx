@@ -16,7 +16,7 @@ import ninital from "/nainital.jpg";
 import ladak from "/leh.jpg";
 import dawki from "/dawki.jpg";
 import haridwar from "/haridwar.jpg";
-import kashmir from "/jammu kashmir.jpg";
+import kashmir from "/Jammu-Kashmir.jpg";
 
 
 
