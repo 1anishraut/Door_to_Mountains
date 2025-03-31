@@ -49,18 +49,18 @@ const Blog = ({ arrow }) => {
   return (
     <div
       id="blog"
-      className="max-w-7xl w-full relative flex flex-col self-center gap-3 py-4 px-8 mt-8"
+      className="max-w-7xl w-full relative flex flex-col self-center gap-3 py-4 px-8 "
     >
       <div className="relative flex justify-between items-center">
-        <h2 className=" text-2xl font-semibold text-[#221414]">
+        <h2 className=" text-2xl md:text-3xl font-semibold text-[#221414] max-w-5xl">
           Our Latest Blogs
         </h2>
 
         <div className="flex justify-end gap-3 w-[100px] h-full">
-          <button className="prev-button bg-gray-400 rounded-full flex items-center justify-center cursor-pointer">
+          <button className="prev-button bg-gray-400 rounded-full flex items-center justify-center cursor-pointer scale-115">
             <img src={arrow} alt="" className="rotate-180" />
           </button>
-          <button className="next-button bg-[#221414] rounded-full flex items-center justify-center cursor-pointer">
+          <button className="next-button bg-[#221414] rounded-full flex items-center justify-center cursor-pointer scale-115">
             <img src={arrow} alt="" />
           </button>
         </div>

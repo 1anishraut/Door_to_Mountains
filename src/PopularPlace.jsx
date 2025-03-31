@@ -64,14 +64,16 @@ console.log(places);
 
 const PopularPlaces = () => {
   return (
-    <div className="bg-[#263D47] flex items-center justify-center">
+    <div className="bg-[#263D47] flex items-center justify-center pb-4 ">
       <div className="max-w-7xl relative flex flex-col self-center gap-3 w-full px-8 py-4 pb-8 text-[#221414]  ">
         <div className="flex justify-between  relative">
-          <h2 className="text-2xl font-semibold ">Popular Places</h2>
+          <h2 className="text-2xl text-white md:text-3xl font-semibold ">
+            Popular Places
+          </h2>
 
           <div className="pb-2 flex justify-between items-center gap-8 w-[100px]">
-            <button className="swiper-button-prev   bg-gray-400 rounded-full"></button>
-            <button className="swiper-button-next   bg-[#221414] rounded-full"></button>
+            <button className="swiper-button-prev   bg-gray-400 rounded-full md:scale-115"></button>
+            <button className="swiper-button-next   bg-[#221414] rounded-full md:scale-115"></button>
           </div>
         </div>
 

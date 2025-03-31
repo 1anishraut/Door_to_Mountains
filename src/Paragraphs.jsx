@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import arrow from "/arrow-right-s-line.png";
 import BlogPage from "./BlogPage";
 import TravelPlanPopup from "./TravelPlanPopup";
+import ChoosingUs from "./ChoosingUs";
 
 const Paragraph = () => {
   const [para1] = useState(
@@ -36,6 +37,7 @@ const Paragraph = () => {
       <About para1={para1} para2={para2} para3={para3} para4={para4} />
       <PopularPlace />
       <Video />
+      <ChoosingUs/>
       <Blog arrow={arrow} />
       <TravelPlan />
       <Testimonial />

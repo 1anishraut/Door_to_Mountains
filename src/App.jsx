@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col gap-7 md:gap-14">
+      <div className="flex flex-col gap-7 md:gap-18">
         <Navbar />
         <Paragraph/>
       </div>
