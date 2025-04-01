@@ -29,11 +29,11 @@ const Video = () => {
 
         gsap.fromTo(
           videoSection.current,
-          { y: 100, opacity: 0 },
+          { opacity: 0 },
           {
-            y: 0,
+            
             opacity: 1,
-            duration: 0.4,
+            duration: 0.7,
             ease: "power3.in",
             scrollTrigger: {
               trigger: videoSection.current,
