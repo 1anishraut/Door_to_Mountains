@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
-
+import LocomotiveScroll from "locomotive-scroll"; // Import Locomotive Scroll
+import "locomotive-scroll/dist/locomotive-scroll.css";
 const testimonialsData = [
   {
     name: "Emily Johnson",
@@ -49,14 +50,15 @@ const testimonialsData = [
 
 
 const Testimonial = () => {
+    
   return (
-    <div className="w-full flex flex-col items-center p-8">
+    <div  className="w-full flex flex-col items-center p-8 text-[#221414]">
       <h2 className="text-2xl font-semibold text-center mb-6">
         What Our Clients Say
       </h2>
       <Swiper
         modules={[Pagination, Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: true}}
+        autoplay={{ delay: 3000, disableOnInteraction: true }}
         className="w-full"
         spaceBetween={30}
         slidesPerView={1}

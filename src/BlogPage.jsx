@@ -1,11 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Images
 import arrow from "/public/arrow-right-s-line.png";
 import Footer from "./Footer";
 
 const BlogPage = () => {
+
+   
+  
   const { blogId } = useParams();
   const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
@@ -42,7 +45,7 @@ const BlogPage = () => {
         {/* Blog Content */}
         {blog ? (
           <>
-            <h2 className="text-3xl font-bold text-center mt-4">
+            <h2 className=" text-3xl font-bold text-center mt-4">
               {blog.title}
             </h2>
             <img

@@ -3,10 +3,53 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { gsap } from "gsap";
+
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+import LocomotiveScroll from "locomotive-scroll"; // Import Locomotive Scroll
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
 const Blog = ({ arrow }) => {
+  const blogRef = useRef(null);
+useEffect(() => {
+  let mm = gsap.matchMedia(); // Create a media query instance
+
+  mm.add(
+    {
+      isMobile: "(max-width: 768px)", // Mobile devices
+      isDesktop: "(min-width: 769px)", // Desktop devices
+    },
+    (context) => {
+      let { isMobile, isDesktop } = context.conditions;
+
+      gsap.fromTo(
+        blogRef.current,
+        {  opacity: 0 },
+        {
+         
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.in",
+          delay: .2,
+
+          scrollTrigger: {
+            trigger: blogRef.current,
+            start: isDesktop ? "top 80%" : "top 85%", // ✅ Mobile starts from bottom 80%
+            end: isDesktop ? "bottom 80%" : "top 95%",
+            toggleActions: "restart    none    none        none",
+            // markers: true,
+          },
+        }
+      );
+    }
+  );
+
+  return () => mm.revert(); // Cleanup on unmount
+}, []);
+ 
   const [blogs, setBlogs] = useState([]);
   const buttonsRef = useRef([]);
 
@@ -48,6 +91,7 @@ const Blog = ({ arrow }) => {
 
   return (
     <div
+      ref={blogRef}
       id="blog"
       className="max-w-7xl w-full relative flex flex-col self-center gap-3 py-4 px-8 "
     >
@@ -84,11 +128,12 @@ const Blog = ({ arrow }) => {
           className="relative rounded-2xl"
         >
           {blogs.map((blog, index) => (
-            <SwiperSlide key={blog.id}>
+            <SwiperSlide key={blog.id} className="">
               <div
+                
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className="relative overflow-hidden rounded-2xl cursor-pointer shadow-black shadow-2xl"
+                className=" relative overflow-hidden rounded-2xl cursor-pointer shadow-black shadow-2xl"
               >
                 <img
                   src={blog.image}
