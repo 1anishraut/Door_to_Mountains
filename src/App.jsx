@@ -18,21 +18,24 @@ import Preloader from "./Preloader";
 // const Contact1 = () => <section id="contact">Contact Section</section>;
 
 function App() {
- const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  const handlePreloaderComplete = () => {
+    setShowPreloader(false);
+  };
+
   return (
     <>
-      {isLoading ? (
-        <Preloader setIsLoading={setIsLoading} />
-      ) : (
-        <div className="">
-          
-          {/* Your actual app content */}
-          <div className="flex flex-col gap-7 md:gap-18 relative">
-            <Navbar />
-            <Paragraph />
-          </div>
+      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
+
+      <div className={showPreloader ? "invisible" : "visible"}>
+        {/* Your actual content here */}
+        <div className="flex flex-col gap-7 md:gap-18 relative">
+          <Navbar />
+          <Paragraph />
         </div>
-      )}
+      </div>
     </>
   );
 }
