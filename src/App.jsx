@@ -9,7 +9,7 @@ import Blog from './Blog'
 import TravelPlan from './TravelPlan'
 import Testimonial from './Testimonials'
 import Footer from './Footer'
-
+import Preloader from "./Preloader";
 
 
 // const Home1 = () => <section id="home">Home Section</section>;
@@ -18,14 +18,21 @@ import Footer from './Footer'
 // const Contact1 = () => <section id="contact">Contact Section</section>;
 
 function App() {
-
+ const [isLoading, setIsLoading] = useState(true);
   return (
     <>
-      
-      <div className="flex flex-col gap-7 md:gap-18 relative">
-        <Navbar />
-        <Paragraph/>
-      </div>
+      {isLoading ? (
+        <Preloader setIsLoading={setIsLoading} />
+      ) : (
+        <div className="">
+          
+          {/* Your actual app content */}
+          <div className="flex flex-col gap-7 md:gap-18 relative">
+            <Navbar />
+            <Paragraph />
+          </div>
+        </div>
+      )}
     </>
   );
 }
