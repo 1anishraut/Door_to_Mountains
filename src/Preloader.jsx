@@ -16,7 +16,7 @@ const Preloader = ({ setIsLoading }) => {
         // Animate out the preloader
         gsap.to(preloaderRef.current, {
           opacity: 0,
-          duration: 1,
+          duration: 2,
           onComplete: () => setIsLoading(false),
         });
       },
@@ -25,12 +25,12 @@ const Preloader = ({ setIsLoading }) => {
     tl.fromTo(
       textRef.current,
       { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" }
     ).to(textRef.current, {
       y: -20,
       opacity: 0,
       delay: 1,
-      duration: 0.8,
+      duration: 1.8,
       ease: "power2.inOut",
     });
   }, [setIsLoading]);
